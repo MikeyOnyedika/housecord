@@ -1,0 +1,32 @@
+:root {
+
+  /* color */
+  --primary-clr: #592AFF;
+  --primary-clr-50: #592aff80;
+  --secondary-clr: #F0A7FF;
+  --secondary-clr-50: #f0a7ff80;
+  --accent-clr: #DDF1F9;
+  --white-clr: #FFFFFF;
+  --black-clr: #000000;
+  --gray-clr: #555555;
+
+  /* typography */
+  --ff: 'Open Sans', sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  /* 14px  */
+  --fs-regular: 0.875rem;
+  /* 11px */
+  --fs-x-sm: 0.688rem;
+  /* 12px */
+  --fs-sm: 0.75rem;
+  /* 20px */
+  --fs-md: 1.25rem;
+  /*32px  */
+  --fs-lg: 2rem;
+
+
+  /* spacing  */
+  --padding-inline: 1em;
+  --padding-block: 0.8em;
+}
