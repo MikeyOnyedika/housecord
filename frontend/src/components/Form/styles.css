@@ -1,0 +1,33 @@
+.form {
+    background-color: var(--white-clr);
+    padding-inline: calc(var(--padding-inline ) * 2);
+    padding-block: calc(var(--padding-block) * 2.5 );
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: calc(var(--gap) * 2);
+    margin-bottom: calc(var(--padding-block)  * 3);
+    /* height: 100%; */
+}
+
+.form__section {
+    display: flex;
+    gap: calc(var(--gap) * 1.5);
+    justify-content: center;
+}
+
+.form__section--column {
+    flex-direction: column;
+}
+
+.form__section--header {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section--header__title {
+    font-weight: var(--fw-regular);
+    text-transform: capitalize;
+    font-size: var(--fs-lg);
+}
