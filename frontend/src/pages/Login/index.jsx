@@ -3,14 +3,14 @@ import Logo from '../../components/Logo';
 import Form from '../../components/Form';
 import Main from '../../components/Main';
 import Header from '../../components/Header';
-import PageWrapper from '../../components/PageWrapper';
+import Page from '../../components/Page';
 import SubmitBtn from '../../components/FormSubmitBtn';
 import TextFormInput from '../../components/TextFormInput';
 import AuthFormRedirect from '../../components/AuthFormRedirect';
 
 const Login = () => {
   return (
-    <PageWrapper>
+    <Page>
       <Header>
         <Logo />
       </Header>
@@ -34,7 +34,6 @@ const Login = () => {
               errorMsg="Password must be provided"
               idForLabel="login-password"
             />,
-            
           ]}
           submitBtn={<SubmitBtn btnText={'Login'} />}
           extras={
@@ -46,7 +45,7 @@ const Login = () => {
           }
         />
       </Main>
-    </PageWrapper>
+    </Page>
   );
 };
 
