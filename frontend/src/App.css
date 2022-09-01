@@ -4,9 +4,25 @@
   box-sizing: border-box;
 }
 
+input,
+button {
+  border: none;
+  outline: 0px solid var(--secondary-clr);
+  font-family: inherit;
+}
+
+a,button{
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
 body {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
   font-family: var(--ff);
   font-weight: var(--fw-regular);
   background-color: var(--primary-clr);
@@ -15,6 +31,7 @@ body {
 #root {
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
 /* defining variables */
@@ -33,7 +50,8 @@ body {
   --fs-lg: calc(var(--fs-x-sm) * 2.18);
   /* 30px */
   --fs-x-lg: calc(var(--fs-x-sm) * 2.725);
-
+  /* for icon size - 45px */
+  --fs-xx-lg: calc(var(--fs-x-lg) * 1.5);
 
   /* Colors */
   --fs-lg: calc(var(--fs-x-sm) *);
@@ -46,14 +64,45 @@ body {
   --white-clr: #FFFFFF;
 
 
-
   /* spacing */
   --padding-inline: 1rem;
   --padding-block: 0.8rem;
   --gap: 1rem;
+  --border-radius: 0.3rem;
 
 }
 
-.flex{
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
   display: flex;
+  width: 100%;
+  height: 100;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+/* flex positioning */
+.flex--align-base {
+  align-items: flex-end;
+}
+
+.flex--center-center {
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* flex spacing */
+.flex--gap {
+  gap: var(--gap);
 }

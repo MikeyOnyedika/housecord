@@ -14,19 +14,21 @@ import PublicRoom from './components/PublicRoom/';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to={'/login'} />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/rooms/@me" element={<MyHouse />}>
-          <Route path=":id" element={<PrivateRoom />} />
-        </Route>
-        <Route path="/rooms/:houseId" element={<PublicHouse />}>
-          <Route path=":id" element={<PublicRoom />} />
-        </Route>
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Navigate to={'/login'} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/rooms/@me" element={<MyHouse />}>
+            <Route path=":id" element={<PrivateRoom />} />
+          </Route>
+          <Route path="/rooms/:houseId" element={<PublicHouse />}>
+            <Route path=":id" element={<PublicRoom />} />
+          </Route>
+        </Routes>
+      </Router>
+    </>
   );
 }
 

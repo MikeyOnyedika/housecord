@@ -1,0 +1,9 @@
+.header {
+    padding-inline: var(--padding-inline);
+    padding-block: var(--padding-block);
+}
+.header__title{
+    font-size: var(--fs-lg);
+    color: var(--secondary-clr);
+    letter-spacing: calc(var(--gap) * 0.2);
+}
