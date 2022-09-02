@@ -1,0 +1,18 @@
+.dm-link{
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    padding-left: calc(var(--padding-inline) * 0.3);
+    padding-block: calc(var(--padding-block) * 0.5);
+    border-radius: var(--border-radius);
+}
+
+.dm-link:hover{
+    background-color: var(--primary-clr-50);
+    color:var(--accent-clr);
+}
+
+.dm-link__name{
+    font-size: var(--fs-md);
+    color: var(--seconary-clr);
+}

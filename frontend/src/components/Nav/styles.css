@@ -1,0 +1,7 @@
+.nav {
+    display: flex;
+    background-color: var(--secondary-clr-50);
+    border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+    /* gap: var(--gap); */
+    height: 100%;
+}
