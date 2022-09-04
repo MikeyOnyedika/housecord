@@ -7,10 +7,11 @@ import {
 } from 'react-router-dom';
 import Login from './pages/Login/';
 import Register from './pages/Register/';
-import MyHouse from './pages/MyHouse/';
-import PublicHouse from './pages/PublicHouse/';
-import PrivateRoom from './components/PrivateRoom/';
-import PublicRoom from './components/PublicRoom/';
+import HouseChat from './pages/HouseChat';
+import DMChatRoom from './components/DMChatRoom/';
+import PublicChatRoom from './components/PublicChatRoom';
+import DMChatRoomWrapper from './components/DMChatRoomWrapper/';
+import PublicChatRoomWrapper from './components/PublicChatRoomWrapper/';
 
 function App() {
   return (
@@ -20,11 +21,15 @@ function App() {
           <Route path="/" element={<Navigate to={'/login'} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/rooms/@me" element={<MyHouse />}>
-            <Route path=":id" element={<PrivateRoom />} />
-          </Route>
-          <Route path="/rooms/:houseId" element={<PublicHouse />}>
-            <Route path=":id" element={<PublicRoom />} />
+
+          <Route path="/rooms" element={<HouseChat />}>
+            <Route path="@me" element={<DMChatRoomWrapper />}>
+              <Route path=":id" element={<DMChatRoom />} />
+            </Route>
+
+            <Route path=":houseId" element={<PublicChatRoomWrapper />}>
+              <Route path=":id" element={<PublicChatRoom />} />
+            </Route>
           </Route>
         </Routes>
       </Router>
