@@ -20,11 +20,11 @@ export class User implements IUser {
 
 type Method = 'get' | 'head' | 'post' | 'put' | 'delete' | 'connect' | 'patch'
 
-export type Route = {
+export type Router = {
     method: Method;
     path: string;
     middleware: RequestHandler[],
-    controller: Controller;
+    controller: ControllerFunction;
 }
 
-type Controller = (req: Request, res: Response) => any
+export type ControllerFunction = (req: Request, res: Response) => any

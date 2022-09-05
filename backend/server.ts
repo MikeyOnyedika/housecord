@@ -1,10 +1,28 @@
 import express from 'express'
-import { User } from './data/types'
-import { addUser, getUser } from './data/users'
+import AuthRouter from './routes/AuthRouter'
+import { connect } from 'mongoose'
 const app = express();
 const PORT = 3989;
 
-app.use(express.urlencoded({ extended: true }))
 
+async function main() {
+    async function connectDb() {
+        console.log("connecting to mongodb...")
+        await connect("mongodb://localhost:27017/housecord")
+    }
 
-app.listen(PORT, () => console.log(`Server running on port : ${PORT}`))
+    try {
+        await connectDb();
+        console.log("successful connecting to mongodb")
+    } catch (err) {
+       throw new Error(<string> err)
+    }
+
+    app.use(express.urlencoded({ extended: true }))
+    app.use('/', AuthRouter)
+
+    app.listen(PORT, () => console.log(`Server running on port : ${PORT}`))
+
+}
+
+main()
