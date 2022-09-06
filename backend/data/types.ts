@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction, RequestHandler } from 'express'
+
 export interface IUser {
     email?: string
     password: string
@@ -27,4 +28,9 @@ export type Router = {
     controller: ControllerFunction;
 }
 
-export type ControllerFunction = (req: Request, res: Response) => any
+interface CustomRequest extends Request {
+    user?: any
+}
+
+export type Middleware = (req: CustomRequest, res: Response, next: NextFunction) => any
+export type ControllerFunction = (req: CustomRequest, res: Response) => any

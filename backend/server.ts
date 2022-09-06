@@ -1,21 +1,23 @@
 import express from 'express'
 import AuthRouter from './routes/AuthRouter'
 import { connect } from 'mongoose'
-const app = express();
-const PORT = 3989;
+import dotenv from 'dotenv'
+dotenv.config()
 
+const app = express();
+const PORT = process.env.PORT
 
 async function main() {
     async function connectDb() {
         console.log("connecting to mongodb...")
-        await connect("mongodb://localhost:27017/housecord")
+        await connect(<string>process.env.MONGODB_URI)
     }
 
     try {
         await connectDb();
         console.log("successful connecting to mongodb")
     } catch (err) {
-       throw new Error(<string> err)
+        throw new Error(<string>err)
     }
 
     app.use(express.urlencoded({ extended: true }))
