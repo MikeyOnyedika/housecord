@@ -8,6 +8,7 @@ const Header = () => {
       <LogoImage
         color="var(--white-clr)"
         width="var(--fs-xx-lg)"
+        height="var(--fs-xx-lg)"
         bgColor="var(--primary-clr)"
       />
       <p className='header__title'>ousecord</p>

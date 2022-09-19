@@ -34,7 +34,7 @@
 }
 
 .nav-link--highlight{
-    outline: 4px solid var(--secondary-clr-light);
+    outline: 4px solid var(--secondary-clr-2);
 }
 
 /* testing stuff out */

@@ -63,7 +63,7 @@ body {
   --primary-clr: #592AFF;
   --primary-clr-50: #592aff80;
   --secondary-clr: #F0A7FF;
-  --secondary-clr-light: #AC95FF;
+  --secondary-clr-2: #AC95FF;
   --accent-clr: #DDF1F9;
   --black-clr: #000000;
   --white-clr: #FFFFFF;
@@ -79,9 +79,24 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 7px;
+  height: 7px;
+  /* background-color: white; */
 }
 
+/* ::-webkit-scrollbar-corner{
+  border-radius: 5px;
+} */
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  color: blue;
+  background-color: var(--secondary-clr);
+  border-radius: 10px;
+}
 
 
 h2 {
@@ -100,6 +115,7 @@ main {
   height: 100;
 }
 
+/* some flex classes */
 .flex {
   display: flex;
 }

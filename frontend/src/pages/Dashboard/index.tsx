@@ -1,11 +1,10 @@
 import Nav from '../../components/Nav';
-import MyDMListings from '../../components/MyDMListings';
+import Sidebar from '../../components/Sidebar';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import './styles.css'
 
 const Dashboard = () => {
-  let SecondaryNav = MyDMListings;
   const location = useLocation();
   const path = location.pathname;
 
@@ -14,14 +13,10 @@ const Dashboard = () => {
     return <Navigate to={'/rooms/@me'} />;
   }
   
-  // TODO: switch the SecondaryNav to HouseRooms when the route is something like /rooms/<houseid>
-  // if (path === /rooms/.source) {
-  //   console.log(path);
-  // }
   return (
     <div className="flex ">
       <section className="container">
-        <Nav>{<SecondaryNav />}</Nav>
+        <Nav>{<Sidebar />}</Nav>
         <Outlet />
       </section>
     </div>

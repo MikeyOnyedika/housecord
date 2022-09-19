@@ -1,18 +1,28 @@
-.dm-listings{
+.Sidebar{
     padding-left: calc(var(--padding-inline) * 0.3);
     padding-right: calc(var(--padding-inline) * 0.8);
     padding-block: calc(var(--padding-block) * 2.3);
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--gap) * 2);
+    gap: calc(var(--gap) * 0.5);
 }
 
-.dm-listings__search{
+.DMs{
+    overflow-y: auto;
+}
+
+.DMs li{
+    margin-top: calc(var(--gap) * 0.3);
+}
+
+
+.Sidebar__search{
     margin-left: calc(var(--padding-inline) * 0.3);
 }
 
-.dm-listings__title{
+.Sidebar__title{
     font-size: var(--fs-regular);
     padding-left: calc(var(--padding-inline) * 0.3);
 

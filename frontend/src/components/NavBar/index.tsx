@@ -2,12 +2,15 @@ import React from 'react';
 import LogoImage from '../LogoImage';
 import Separator from '../Separator';
 import { NavLink } from 'react-router-dom';
-import './styles.css';
 import { FaWrench, FaPlus } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import ImageHolder from '../ImageHolder';
+import { useDMContext } from '../../contexts/DMProvider';
+import './styles.css';
 
 const NavBar = () => {
+  const { showDM } = useDMContext();
+
   const houses = [
     { id: 'asdfas', url: '' },
     { id: 'werkwerk', url: '' },
@@ -20,7 +23,13 @@ const NavBar = () => {
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-list__item dm-btn">
-            <NavLink to="/rooms/@me" className={({ isActive }) => isActive ? "nav-link nav-link--highlight" : "nav-link" }>
+            <NavLink
+              to="/rooms/@me"
+              className={({ isActive }) =>
+                isActive ? 'nav-link nav-link--highlight' : 'nav-link'
+              }
+              onClick={() => showDM(true)}
+            >
               <LogoImage
                 width={'var(--image-size)'}
                 height={'var(--image-size)'}
@@ -38,7 +47,12 @@ const NavBar = () => {
           <div className="house-list">
             {houses.map((house) => (
               <li className="navbar-list__item" key={house.id}>
-                <NavLink to={`/rooms/${house.id}`}   className={({ isActive }) => isActive ? "nav-link nav-link--highlight" : "nav-link" }>
+                <NavLink
+                  to={`/rooms/${house.id}`}
+                  className={({ isActive }) =>
+                    isActive ? 'nav-link nav-link--highlight' : 'nav-link'
+                  }
+                >
                   <ImageHolder url={house.url} />
                 </NavLink>
               </li>
@@ -48,7 +62,9 @@ const NavBar = () => {
           <li className="navbar-list__item">
             <Separator />
             <button className="dm-link__image">
-              <IconContext.Provider value={{ size: '1.5rem', color: 'var(--primary-clr)'}}>
+              <IconContext.Provider
+                value={{ size: '1.5rem', color: 'var(--primary-clr)' }}
+              >
                 <FaPlus />
               </IconContext.Provider>
             </button>

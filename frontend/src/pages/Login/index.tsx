@@ -4,11 +4,19 @@ import Header from '../../components/Header/';
 import {Link} from 'react-router-dom'
 
 const Login = () => {
+  
+  function handleSubmit(e: any){
+    e.preventDefault();
+
+
+  }
+
+
   return (
     <div className="flex flex--column container">
       <Header />
       <main className="flex flex--center-center">
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <section className="form-group">
             <div className="form-group__logo">
               <LogoImage

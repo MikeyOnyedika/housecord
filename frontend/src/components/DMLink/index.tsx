@@ -10,7 +10,7 @@ import HouseCordLogo from '../../assets/housecord.svg';
 const DMLink = (props: any) => {
   return (
     <NavLink
-      to={`/rooms/@me/${props.dm.id}`}
+      to={`/rooms/@me/${props.id}`}
       className={({ isActive }) =>
         isActive ? 'dm-link dm-link--highlight' : 'dm-link'
       }
@@ -20,12 +20,12 @@ const DMLink = (props: any) => {
           <div className="user-status__inside-bubble user-status__inside-bubble--offline"></div>
         </div>
         <img
-          src={props.dm.url || HouseCordLogo}
+          src={props.url || HouseCordLogo}
           alt=""
           className="dm-link__image"
         />
       </div>
-      <span className="dm-link__name">{props.dm.name}</span>
+      <span className="dm-link__name">{props.name}</span>
     </NavLink>
   );
 };

@@ -4,6 +4,6 @@
 }
 .header__title{
     font-size: var(--fs-lg);
-    color: var(--secondary-clr);
+    color: var(--white-clr);
     letter-spacing: calc(var(--gap) * 0.2);
 }
