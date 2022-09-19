@@ -2,8 +2,9 @@ import Nav from '../../components/Nav';
 import MyDMListings from '../../components/MyDMListings';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import './styles.css'
 
-const HouseChat = () => {
+const Dashboard = () => {
   let SecondaryNav = MyDMListings;
   const location = useLocation();
   const path = location.pathname;
@@ -27,4 +28,4 @@ const HouseChat = () => {
   );
 };
 
-export default HouseChat;
+export default Dashboard;

@@ -12,7 +12,8 @@ button {
   font-family: inherit;
 }
 
-a,button{
+a,
+button {
   cursor: pointer;
   text-decoration: none;
 }
@@ -62,7 +63,7 @@ body {
   --primary-clr: #592AFF;
   --primary-clr-50: #592aff80;
   --secondary-clr: #F0A7FF;
-  --secondary-clr-50: #f0a7ff80;
+  --secondary-clr-light: #AC95FF;
   --accent-clr: #DDF1F9;
   --black-clr: #000000;
   --white-clr: #FFFFFF;
@@ -73,17 +74,17 @@ body {
   --padding-block: 0.8rem;
   --gap: 1rem;
   --border-radius: 0.3rem;
-  --border-radius-lg: calc(var(--border-radius) * 8 );
+  --border-radius-lg: calc(var(--border-radius) * 8);
 
 }
 
-::-webkit-scrollbar{
-  width: 1px;
+::-webkit-scrollbar {
+  width: 2px;
 }
 
 
 
-h2{
+h2 {
   font-weight: var(--fw-bold);
 }
 
@@ -123,7 +124,7 @@ main {
 }
 
 
-.dm-link__image{
+.dm-link__image {
   width: var(--image-size);
   height: var(--image-size);
   border-radius: 50%;

@@ -7,11 +7,11 @@ import {
 } from 'react-router-dom';
 import Login from './pages/Login/';
 import Register from './pages/Register/';
-import HouseChat from './pages/HouseChat';
-import DMChatRoom from './components/DMChatRoom/';
-import PublicChatRoom from './components/PublicChatRoom';
-import DMChatRoomWrapper from './components/DMChatRoomWrapper/';
-import PublicChatRoomWrapper from './components/PublicChatRoomWrapper/';
+import Dashboard from './pages/Dashboard';
+import DMs from './components/DMs';
+import House from './components/House';
+import OpenDM from './components/OpenDM';
+import OpenRoom from './components/OpenRoom';
 
 function App() {
   return (
@@ -22,13 +22,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          <Route path="/rooms" element={<HouseChat />}>
-            <Route path="@me" element={<DMChatRoomWrapper />}>
-              <Route path=":id" element={<DMChatRoom />} />
+          <Route path="/rooms" element={<Dashboard />}>
+            <Route path="@me" element={<DMs />}>
+              <Route path=":id" element={<OpenDM />} />
             </Route>
 
-            <Route path=":houseId" element={<PublicChatRoomWrapper />}>
-              <Route path=":id" element={<PublicChatRoom />} />
+            <Route path=":houseId" element={<House />}>
+              <Route path=":id" element={<OpenRoom />} />
             </Route>
           </Route>
         </Routes>

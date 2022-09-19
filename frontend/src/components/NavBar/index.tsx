@@ -1,7 +1,7 @@
 import React from 'react';
 import LogoImage from '../LogoImage';
 import Separator from '../Separator';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 import { FaWrench, FaPlus } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
@@ -20,7 +20,7 @@ const NavBar = () => {
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-list__item dm-btn">
-            <Link to="/rooms/@me">
+            <NavLink to="/rooms/@me" className={({ isActive }) => isActive ? "nav-link nav-link--highlight" : "nav-link" }>
               <LogoImage
                 width={'var(--image-size)'}
                 height={'var(--image-size)'}
@@ -31,16 +31,16 @@ const NavBar = () => {
                 borderWidth={'1px'}
                 borderColor={'var(--primary-clr)'}
               />
-            </Link>
+            </NavLink>
           </li>
           <Separator />
 
           <div className="house-list">
             {houses.map((house) => (
-              <li className="navbar-list__item">
-                <Link to={`/rooms/${house.id}`}>
+              <li className="navbar-list__item" key={house.id}>
+                <NavLink to={`/rooms/${house.id}`}   className={({ isActive }) => isActive ? "nav-link nav-link--highlight" : "nav-link" }>
                   <ImageHolder url={house.url} />
-                </Link>
+                </NavLink>
               </li>
             ))}
           </div>
