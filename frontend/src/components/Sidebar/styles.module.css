@@ -1,29 +1,68 @@
-.Sidebar{
-    padding-left: calc(var(--padding-inline) * 0.3);
-    padding-right: calc(var(--padding-inline) * 0.8);
-    padding-block: calc(var(--padding-block) * 2.3);
+/* add bottom margin to h2 that is the first child of a div */
+div>h2:first-child {
+    margin-bottom: calc(var(--padding-block) * 0.5);
+}
+
+.Sidebar {
+    padding-inline: calc(var(--padding-inline) * 0.7);
+    padding-block: calc(var(--padding-block) * 1.5);
     width: 15rem;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--gap) * 0.5);
-}
-
-.DMs{
+    gap: calc(var(--gap));
     overflow-y: auto;
 }
 
-.DMs li{
+.DMs {
+    overflow-y: auto;
+}
+
+.DMs li {
     margin-top: calc(var(--gap) * 0.3);
 }
 
 
-.Sidebar__search{
-    margin-left: calc(var(--padding-inline) * 0.3);
+.Sidebar__search {
+    /* width: 100%; */
 }
 
-.Sidebar__title{
+.Sidebar__title {
     font-size: var(--fs-regular);
-    padding-left: calc(var(--padding-inline) * 0.3);
+    font-weight: var(--fw-bold);
+}
 
+.HouseName {
+    font-size: var(--fs-x-lg);
+    color: var(--accent-clr);
+    line-height: 1;
+}
+
+.Sidebar h2+p {
+    color: var(--white-clr);
+}
+
+.RoomListings {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--gap) * 0.5);
+}
+
+.Room {
+    background-color: var(--primary-clr);
+    border-radius: 5px;
+    padding: 0.5em;
+    color: var(--white-clr);
+}
+
+.Room__title::before {
+    content: '# ';
+}
+
+.Sidebar__description {
+    font-size: var(--fs-regular);
+}
+
+.Sidebar__description___forRoom{
+    margin-left: 0.5rem;
 }

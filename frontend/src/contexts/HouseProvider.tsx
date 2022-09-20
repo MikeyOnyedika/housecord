@@ -8,12 +8,32 @@ export function useHouseContext() {
 
 const HouseProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const houses = [
-    { id: 'asdfas', title: 'Webdev for beginners', url: '', rooms: [] },
+    {
+      id: 'asdfas',
+      title: 'Webdev for beginners',
+      url: '',
+      rooms: [
+        { title: 'introduction', description: 'introduce yourself' },
+        {
+          title: 'HTML question',
+          description: 'Ask questions related to html in this room',
+        },
+      ],
+      description:
+        'learn the fundamentals of web dev with people from this house and build cool things together',
+    },
     {
       id: 'werkwerk',
       title: 'Wacky coders',
       url: '',
-      rooms: [],
+      rooms: [
+        { title: 'introduction', description: 'introduce yourself' },
+        {
+          title: 'HTML question',
+          description: 'Ask questions related to html in this room',
+        },
+      ],
+
       description:
         'put your coding skills to the test building wacky little programs with a bunch of room mates',
     },
@@ -21,14 +41,28 @@ const HouseProvider: React.FC<PropsWithChildren> = ({ children }) => {
       id: 'kdfakdf',
       title: 'Html simplified',
       url: '',
-      rooms: [],
+      rooms: [
+        { title: 'introduction', description: 'introduce yourself' },
+        {
+          title: 'HTML question',
+          description: 'Ask questions related to html in this room',
+        },
+      ],
+
       description: 'for those who just love things broken way down for them',
     },
     {
       id: 'lelrwe',
       title: 'Dumb code coder',
       url: '',
-      rooms: [],
+      rooms: [
+        { title: 'introduction', description: 'introduce yourself' },
+        {
+          title: 'HTML question',
+          description: 'Ask questions related to html in this room',
+        },
+      ],
+
       description: 'all dumb coders gather in this house',
     },
   ];

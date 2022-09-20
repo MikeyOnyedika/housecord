@@ -10,12 +10,7 @@ import './styles.css';
 import { useHouseContext } from '../../contexts/HouseProvider';
 
 type FRType = React.FC< { func: () => void}  >
-const FunctionRunner: FRType = ({ func }) => {
-  useEffect(() => {
-    func();
-  }, []);
-  return <></>;
-}
+
 
 const NavBar = () => {
   const { showDM } = useDMContext();
@@ -35,6 +30,13 @@ const NavBar = () => {
     } else {
       showHouse(false);
     }
+  }
+
+  const FunctionRunner: FRType = ({ func }) => {
+    useEffect(() => {
+      func();
+    });
+    return <></>;
   }
 
   return (

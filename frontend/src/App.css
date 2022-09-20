@@ -79,8 +79,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
   /* background-color: white; */
 }
 
@@ -98,10 +98,6 @@ body {
   border-radius: 10px;
 }
 
-
-h2 {
-  font-weight: var(--fw-bold);
-}
 
 main {
   width: 100%;
