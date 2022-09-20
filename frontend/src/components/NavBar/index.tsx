@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LogoImage from '../LogoImage';
 import Separator from '../Separator';
 import { NavLink } from 'react-router-dom';
@@ -7,16 +7,35 @@ import { IconContext } from 'react-icons';
 import ImageHolder from '../ImageHolder';
 import { useDMContext } from '../../contexts/DMProvider';
 import './styles.css';
+import { useHouseContext } from '../../contexts/HouseProvider';
+
+type FRType = React.FC< { func: () => void}  >
+const FunctionRunner: FRType = ({ func }) => {
+  useEffect(() => {
+    func();
+  }, []);
+  return <></>;
+}
 
 const NavBar = () => {
   const { showDM } = useDMContext();
+  const { houses, showHouse, lastVisitedHouse } = useHouseContext();
 
-  const houses = [
-    { id: 'asdfas', url: '' },
-    { id: 'werkwerk', url: '' },
-    { id: 'kdfakdf', url: '' },
-    { id: 'lelrwe', url: '' },
-  ];
+  function setDM(isShow: boolean) {
+    if (isShow) {
+      showDM(true);
+    } else {
+      showDM(false);
+    }
+  }
+
+  function setHouse(isShow: boolean, houseId?: string) {
+    if (isShow) {
+      showHouse(true, houseId);
+    } else {
+      showHouse(false);
+    }
+  }
 
   return (
     <div>
@@ -25,35 +44,66 @@ const NavBar = () => {
           <li className="navbar-list__item dm-btn">
             <NavLink
               to="/rooms/@me"
-              className={({ isActive }) =>
-                isActive ? 'nav-link nav-link--highlight' : 'nav-link'
-              }
-              onClick={() => showDM(true)}
+              className={({ isActive }) => {
+                return isActive ? 'nav-link nav-link--highlight' : 'nav-link';
+              }}
             >
-              <LogoImage
-                width={'var(--image-size)'}
-                height={'var(--image-size)'}
-                color={'var(--primary-clr)'}
-                bgColor={'var(--white-clr)'}
-                borderRadius={'50%'}
-                padding={'calc(var(--padding-inline) * 0.5)'}
-                borderWidth={'1px'}
-                borderColor={'var(--primary-clr)'}
-              />
+              {({ isActive }) => {
+                return (
+                  <>
+                    <FunctionRunner
+                      func={() => {
+                        if (isActive) {
+                          setHouse(false)
+                          setDM(true);
+                        }
+                      }}
+                    />
+                    <LogoImage
+                      width={'var(--image-size)'}
+                      height={'var(--image-size)'}
+                      color={'var(--primary-clr)'}
+                      bgColor={'var(--white-clr)'}
+                      borderRadius={'50%'}
+                      padding={'calc(var(--padding-inline) * 0.5)'}
+                      borderWidth={'1px'}
+                      borderColor={'var(--primary-clr)'}
+                    />
+                  </>
+                );
+              }}
             </NavLink>
           </li>
           <Separator />
 
           <div className="house-list">
-            {houses.map((house) => (
+            {houses.map((house: any) => (
               <li className="navbar-list__item" key={house.id}>
                 <NavLink
                   to={`/rooms/${house.id}`}
-                  className={({ isActive }) =>
-                    isActive ? 'nav-link nav-link--highlight' : 'nav-link'
-                  }
+                  className={({ isActive }) => {
+                    if (isActive) {
+                      return 'nav-link nav-link--highlight';
+                    } else {
+                      return 'nav-link';
+                    }
+                  }}
                 >
-                  <ImageHolder url={house.url} />
+                  {({ isActive }) => {
+                    return (
+                      <>
+                        <FunctionRunner
+                          func={() => {
+                            if (isActive) {
+                              setDM(false)
+                              setHouse(true, house.id);
+                            }
+                          }}
+                        />
+                        <ImageHolder url={house.url} />
+                      </>
+                    );
+                  }}
                 </NavLink>
               </li>
             ))}

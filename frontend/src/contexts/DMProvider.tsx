@@ -34,9 +34,13 @@ const DMProvider: React.FC<PropsWithChildren> = ({ children }) => {
     </li>
   ));
 
+  function showDM (value: boolean){
+    setIsDMActive(value)
+  }
+
   return (
     <DMContext.Provider
-      value={{ dmSidebar: dms, isDmActive, showDM: setIsDMActive }}
+      value={{ dmSidebar: dms, isDmActive, showDM }}
     >
       {children}
     </DMContext.Provider>

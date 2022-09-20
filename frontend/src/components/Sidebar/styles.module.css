@@ -2,7 +2,7 @@
     padding-left: calc(var(--padding-inline) * 0.3);
     padding-right: calc(var(--padding-inline) * 0.8);
     padding-block: calc(var(--padding-block) * 2.3);
-    width: 100%;
+    width: 15rem;
     height: 100%;
     display: flex;
     flex-direction: column;

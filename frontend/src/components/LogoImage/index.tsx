@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 interface ImageProps {
   color: string;
   width: string;
@@ -10,6 +12,7 @@ interface ImageProps {
 }
 
 const LogoImage = (props: ImageProps) => {
+
   return (
     <div
       style={{
