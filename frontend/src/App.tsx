@@ -12,6 +12,7 @@ import DMs from './components/DMs';
 import House from './components/House';
 import OpenDM from './components/OpenDM';
 import OpenRoom from './components/OpenRoom';
+import Friends from './components/Friends';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/rooms" element={<Dashboard />}>
+            <Route path="@me/friends" element={<Friends />} />
             <Route path="@me" element={<DMs />}>
               <Route path=":id" element={<OpenDM />} />
             </Route>

@@ -1,0 +1,52 @@
+.Panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Titlebar {
+    background-color: var(--white-clr);
+    padding-inline: var(--padding-inline);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: var(--fw-bold);
+
+}
+
+.Name {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--gap) * 0.5);
+}
+
+.NameText {
+    font-size: var(--fs-regular-x);
+    text-align: end;
+}
+
+.Status {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.Status___online {
+    background-color: var(--primary-clr);
+}
+
+.Status___offline {
+    background-color: gray;
+}
+
+.OfflineText{
+    color: var(--black-clr); 
+    font-size: var(--fs-sm);
+}
+
+.OfflineText > span:first-child{
+    color: var(--secondary-clr-2);
+}

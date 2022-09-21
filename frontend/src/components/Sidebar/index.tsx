@@ -48,7 +48,9 @@ const Sidebar = () => {
                   >
                     {room.title}
                   </p>
-                  <p className={`${Styles.Sidebar__description} ${Styles.Sidebar__description___forRoom}`}>
+                  <p
+                    className={`${Styles.Sidebar__description} ${Styles.Sidebar__description___forRoom}`}
+                  >
                     {room.description}
                   </p>
                 </li>
@@ -60,6 +62,7 @@ const Sidebar = () => {
     );
   } else {
     console.log('No nav item selected yet');
+    return <></>
   }
 };
 
