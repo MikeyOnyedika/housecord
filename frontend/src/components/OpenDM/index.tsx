@@ -2,11 +2,19 @@ import React from 'react';
 import { useDMContext } from '../../contexts/DMProvider';
 import { Status } from '../../contexts/DMProvider';
 import Styles from './styles.module.css';
-import ChatMessage from '../ChatMessage'
+import Message from '../Message';
+import { MessageType } from '../../types/MessageType';
+import { FaPaperPlane } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 
 function OpenDM() {
   const { dm } = useDMContext();
+
   console.log(dm.status);
+
+  function handleSubmit(e: any) {
+    e.preventDefault();
+  }
 
   return (
     <section className={Styles.Panel}>
@@ -29,12 +37,21 @@ function OpenDM() {
           </div>
         )}
       </div>
-      <div className={Styles.Chat}>
-        {dm.conversations.map((message) => (
-          <ChatMessage {...message} />
+      <div className={Styles.Messages}>
+        {dm.conversations.map((message: MessageType) => (
+          <Message {...message} />
         ))}
       </div>
-      <div className={Styles.Message}></div>
+      <div>
+        <form className={Styles.Messagebar} onSubmit={handleSubmit}>
+          <input type="text" className={Styles.Messagebar__TextField} placeholder="Message" />
+          <button type="submit" className={Styles.Messagebar__Send}>
+            <IconContext.Provider value={{ size: '1.2rem' , className: Styles.SendIcon}}>
+              <FaPaperPlane />
+            </IconContext.Provider>
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

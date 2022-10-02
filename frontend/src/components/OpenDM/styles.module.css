@@ -42,11 +42,62 @@
     background-color: gray;
 }
 
-.OfflineText{
-    color: var(--black-clr); 
+.OfflineText {
+    color: var(--black-clr);
     font-size: var(--fs-sm);
 }
 
-.OfflineText > span:first-child{
+.OfflineText>span:first-child {
     color: var(--secondary-clr-2);
+}
+
+.Messages {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--gap) * 0.5);
+    padding-block: var(--gap);
+    align-items: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.Messagebar {
+    display: flex;
+    gap: calc(var(--gap) * 0.5);
+}
+
+.Messagebar__TextField {
+    width: 100%;
+    border-radius: var(--border-radius);
+    padding-inline: calc(var(--padding-inline) * 0.5);
+    padding-block: calc(var(--padding-block) * 0.5);
+    font-size: var(--fs-regular);
+}
+
+.Messagebar__TextField:focus {
+    outline: 3px solid var(--secondary-clr);
+}
+
+
+.Messagebar__Send {
+    font-size: var(--fs-regular);
+    padding-inline: var(--padding-inline);
+    padding-block: calc(var(--padding-block) * 0.5);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-clr);
+}
+
+.Messagebar__Send:hover {
+    background-color: var(--secondary-clr-50);
+}
+
+.Messagebar__Send:hover * {
+    color: var(--white-clr);
+}
+
+
+.SendIcon {
+    margin-inline: calc(var(--padding-inline) * 0.5);
+    color: var(--primary-clr);
 }
